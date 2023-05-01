@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/dc2c6d773d.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+    *{
+        color:#003F73 ;
+    
+    }
+    
+.main1{
+    margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+    display:grid;
+    background-color: #FFFFFF  ;
+     width: 105vh;
+     height: 65vh;
+}
+.inputval{
+   margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 105vh;
+    height: 25vh;
+}
+.inputv{
+    width: 72vh;
+    height: 25vh;
+}
+    .val1,  .val2 {
+        width: 200px;
+        height: 30px;
+        background-color:#C2E3FF ;
+        border-radius: 5px;
+    }
+    .val2 {
+        margin-left: 20px;
+    }
+    .coloroption{
+     width: 25vh;
+    height: 15vh;
+    /* background-color: black; */
+    }
+    ::placeholder {
+  color: #003F73;
+}
+.graphimg{
+    display: flex;
+   margin-left: 30px;
+   width: 100vh;
+    /* background-color: aqua; */
+}
+  .level3{
+    margin-left: 10px;
+    width:80px ;
+background: linear-gradient(to top,#008CFF 0%,#C2E3FF 70% );
+height: 180px;
+  }
+  .level2{
+    margin-left: 30px;
+    width:170px ;
+    height: 170px;
+    background-color: #C2E3FF;
+    background: conic-gradient(#C2E3FF 0% 0deg,#C2E3FF 30% 0deg,#008CFF 0% 0deg ,#008CFF 70% 180deg );
+    border-radius: 50%;
+}
+.level1{
+    margin-left: 30px;
+    width:80px ;
+height: 180px;
+background: linear-gradient(to top,#008CFF 70%,#C2E3FF 0% );
+}
+.box1{
+    margin-top: 30px;
+    margin-left: -60px;
+}
+.box2{
+   margin-left: 120px;
+   margin-top: 30px;
+}
+.box3{
+    margin-left: 120px; 
+    margin-top: 30px;
+}
+h4{
+   text-align: center;
+}.fa-sharp{
+    border-style: solid;
+  border-color:#003F73 ;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main1">
+        <div class="inputval">
+            <div class="inputv">
+            <h3 class="value" for="">Enter Values</h3>
+            <input class="val1" type="number" name="" id="inputval" placeholder="Input value" >
+            <input class="val2" type="number" name="" id="inputmax"  placeholder="Max Value" onmouseout="myFunction()">
+        </div>
+        <div class="coloroption">
+                      
+            <p>Selection Colors</p>
+            <p><i class="fa-sharp fa-solid fa-square" style="color: #FFFFFF;"></i> FFFFFF  100%</p>
+             <p><i class="fa-sharp fa-solid fa-square" style="color: #C2E3FF;"></i> C2E3FF  100%</p>
+             <p><i class="fa-sharp fa-solid fa-square" style="color: #008CFF;"></i> 008CFF  100%</p>
+              <p><i class="fa-sharp fa-solid fa-square" style="color: #003F73;"></i> 003F73  100%</p>       
+        </div>
+        </div>
+       
+        <div class="graphimg">
+            <h3 class="graph">Graphs</h3>
+            <div class="box1">
+                <h1 class="level1" id="level1"></h1>
+                <h4 for="">Level 1</h4>
+            </div>
+            <div class="box2">
+                <h1 class="level2" id="level2"></h1>
+                <h4 for="">Level 2</h4>
+            </div>
+            <div class="box3">
+                <h1 class="level3" id="level3"></h1>
+            <h4 for="">Level 3</h4>
+        </div>
+        </div>
+        
+    </div>
+</body>
+<script>
+  
+  function myFunction() {
+  let min = document.getElementById("inputval").value;
+  let max = document.getElementById("inputmax").value;
+  var a=100;
+  if(max.value<min.value){
+    alert("I am an alert box!");
+    }else{
+      
+        
+    var color=(a/max)*min;
+    var y=(a/max)*max
+     document.getElementById("level3").style.background='linear-gradient(to top,#008CFF 0%,#C2E3FF '+color+'% )';
+     document.getElementById("level2").style.background='conic-gradient(#C2E3FF '+color+'%  , #008CFF 0%)';
+     document.getElementById("level1").style.background='linear-gradient(to top, #008CFF '+color+'%,  #C2E3FF 0%)';
+    
+  }
+    }
+</script>
+</html>
