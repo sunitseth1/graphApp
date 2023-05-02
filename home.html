@@ -1,67 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body
-        {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #000;
-        }
-        .container
-        {
-            background-color: #fff;
-            width: 100%;
-            max-width: 250px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 3px 1px #777;
-        }
-        .slider
-        {
-            -webkit-appearance:none;
-            appearance:none;
-            width: 100%;
-            height: 10px;
-            max-width: 400px;
-            background-color: #ccc;
-            margin: 0;
-            padding: 0;
-            outline: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        </style> 
-</head>
-<body>
-    <div class="container">
 
-        <input type="range" min="0" max="100" value="0" class="slider" id="range">    
-            
-        </div>
-        <script>
-            var body = document.getElementsByTagName('BODY')[0];
-            var sliderValue = document.getElementById('range');
-            
-            sliderValue.oninput = function()
-            {
-            
-            var color1 = 50;
-            // var color2 = 100-color1;    
-            
-            var bg = 'linear-gradient(180deg, #003F73 '+color1+'%,  #C2E3FF 0%)';
-                
-            body.style.setProperty('background', bg);    
-                
-            }
-            </script>
-</body>
-</html>
+function myFunction() {
+    let min = document.getElementById("inputval");
+    let max = document.getElementById("inputmax");
+    let min1=min.value;
+    let max1=max.value;
+    var color=(100/max1)*min1;
+      var b=(max1-min1);
+      var y=(100/max1)*b;
+      let rounded = color.toFixed(2);
+  
+    
+   
+      if(parseInt(max.value)<parseInt(min.value)){
+          console.log(typeof min.value,typeof max.value)
+         
+             alert("please enter a valid value")
+     
+      }else{
+          
+     
+       document.getElementById("level3").style.background='linear-gradient(to top,#008CFF 0%,#C2E3FF '+color+'% )';
+       document.getElementById("level2").style.background='conic-gradient(from -20deg,#C2E3FF 0% 0deg,#C2E3FF '+y+'% 0deg,#008CFF 0% 0deg ,#008CFF '+color+'% 180deg )';
+       document.getElementById("level1").style.background='linear-gradient(to top, #008CFF '+color+'%,  #C2E3FF 0%)';
+      document.getElementById("persentage1").innerText=''+rounded+'%'
+      document.getElementById("persentage2").innerText=''+rounded+'%'
+      document.getElementById("persentage3").innerText=''+rounded+'%'
+      }
+      }
