@@ -43,6 +43,7 @@ input::-webkit-inner-spin-button {
 }
 .selection{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px
 }
     .val2 {
         margin-left: 20px;
