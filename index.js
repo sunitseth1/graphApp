@@ -11,7 +11,7 @@ function myFunction() {
   
     
    
-      if(parseInt(max.value)<parseInt(min.value)){
+      if(parseInt(max.value)<(parseInt(min.value))<100000){
           console.log(typeof min.value,typeof max.value)
          
              alert("please enter a valid value")
